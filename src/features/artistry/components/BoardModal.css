@@ -1,0 +1,148 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(33, 31, 27, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  z-index: 100;
+  animation: modal-fade 0.2s ease forwards;
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-panel {
+  position: relative;
+  display: flex;
+  max-width: 920px;
+  max-height: 85vh;
+  width: 100%;
+  background: #f7f4ec;
+  border: 1px solid #dad4c4;
+  border-radius: 3px;
+  overflow: hidden;
+  animation: modal-rise 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-backdrop,
+  .modal-panel {
+    animation: none;
+  }
+}
+
+.modal-image {
+  flex: 1.4;
+  min-width: 0;
+  background: #211f1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.modal-detail {
+  flex: 1;
+  min-width: 260px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  border-left: 1px solid #dad4c4;
+}
+
+.modal-catalog {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #31504b;
+}
+
+.modal-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #211f1b;
+  margin: 0;
+}
+
+.modal-medium {
+  font-size: 13px;
+  color: #6b6558;
+  margin: 0;
+}
+
+.modal-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #211f1b;
+  margin: 6px 0 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #dad4c4;
+  background: #f7f4ec;
+  color: #211f1b;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal-close:hover {
+  border-color: #a8763e;
+  color: #a8763e;
+}
+
+.modal-close:focus-visible {
+  outline: 2px solid #a8763e;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .modal-panel {
+    flex-direction: column;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-image img {
+    max-height: 40vh;
+  }
+  .modal-detail {
+    border-left: none;
+    border-top: 1px solid #dad4c4;
+  }
+}

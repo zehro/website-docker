@@ -1,0 +1,17 @@
+services:
+  website:
+    container_name: website
+    healthcheck:
+      interval: 30s
+      retries: 3
+      start_period: 15s
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      timeout: 5s
+    image: ghcr.io/zehro/website-docker:latest
+    networks:
+      - proxy-net
+    restart: unless-stopped
+
+networks:
+  proxy-net:
+    external: true

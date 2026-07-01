@@ -1,0 +1,14 @@
+.back-to-hub {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary, currentColor);
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.back-to-hub:hover,
+.back-to-hub:focus-visible {
+  opacity: 1;
+}
