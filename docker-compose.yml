@@ -1,1 +1,13 @@
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: website
+    networks:
+      - proxy-net
+    restart: unless-stopped
 
+networks:
+  proxy-net:
+    external: true
