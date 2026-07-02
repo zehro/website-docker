@@ -1,9 +1,7 @@
 services:
   website:
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: website
+    image: ghcr.io/zehro/website-docker:latest
     networks:
       - proxy-net
     restart: unless-stopped
