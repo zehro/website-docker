@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { posts } from "./posts";
+import { posts } from "./posts/posts";
 
 export function WritingPage() {
   const sorted = [...posts].sort((a, b) => b.date.localeCompare(a.date));

@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../shared/components/Layout";
 import { HomePage } from "../features/home/HomePage";
@@ -6,18 +7,20 @@ import { AllProjectsPage } from "../features/coding/AllProjectsPage";
 import { CategoryProjectsPage } from "../features/coding/CategoryProjectsPage";
 import { ArtistryPage } from "../features/artistry/ArtistryPage";
 import { WritingPage } from "../features/writing/WritingPage";
-import { WritingPostPage } from "../features/writing/WritingPostPage";
 import { NotFoundPage } from "../features/not-found/NotFoundPage";
+
+const WritingPostPage = lazy(() =>
+  import("../features/writing/WritingPostPage").then((m) => ({
+    default: m.WritingPostPage,
+  })),
+);
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
+      { index: true, element: <HomePage /> },
       {
         path: "coding",
         element: <CodingPage />,
@@ -26,22 +29,17 @@ export const router = createBrowserRouter([
           { path: ":category", element: <CategoryProjectsPage /> },
         ],
       },
-      {
-        path: "artistry",
-        element: <ArtistryPage />,
-      },
-      {
-        path: "writing",
-        element: <WritingPage />,
-      },
+      { path: "artistry", element: <ArtistryPage /> },
+      { path: "writing", element: <WritingPage /> },
       {
         path: "writing/:slug",
-        element: <WritingPostPage />,
+        element: (
+          <Suspense fallback={<p className="px-6 py-16 text-gray-500">Loading...</p>}>
+            <WritingPostPage />
+          </Suspense>
+        ),
       },
-      {
-        path: "*",
-        element: <NotFoundPage />,
-      },
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);
