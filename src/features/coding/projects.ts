@@ -7,6 +7,7 @@ export const projects: Project[] = [
     description:
       "Self-hosted stack on TrueNAS SCALE with Portainer, Nginx Proxy Manager, and Cloudflare Tunnel for secure remote access without open inbound ports.",
     stack: ["TrueNAS SCALE", "Docker", "Nginx", "Cloudflare"],
+    category: "devops",
     repoUrl: "https://github.com/zehro",
   },
   {
@@ -15,6 +16,7 @@ export const projects: Project[] = [
     description:
       "Personal site built with Vite, React, TypeScript, and Tailwind, deployed via a GitHub Actions -> GHCR -> Portainer pipeline.",
     stack: ["React", "TypeScript", "Vite", "Tailwind"],
+    category: "frontend",
     repoUrl: "https://github.com/zehro",
   },
 ];
