@@ -19,21 +19,17 @@ export interface BoardItem {
 interface PinterestBoardProps {
   items: BoardItem[];
   /** column counts at each breakpoint, widest first */
-  columns?: { default: number; 1100?: number; 700?: number; 500?: number };
+  columns?: { default: number; 1100: number; 700: number; 500: number };
 }
 
 const DEFAULT_COLUMNS = { default: 4, 1100: 3, 700: 2, 500: 1 };
 
-export default function PinterestBoard({ items, columns }: PinterestBoardProps) {
+export default function PinterestBoard({ items, columns = DEFAULT_COLUMNS }: PinterestBoardProps) {
   const [activeItem, setActiveItem] = useState<BoardItem | null>(null);
 
   return (
     <>
-      <Masonry
-        breakpointCols={(columns = DEFAULT_COLUMNS)}
-        className="board-grid"
-        columnClassName="board-column"
-      >
+      <Masonry breakpointCols={columns} className="board-grid" columnClassName="board-column">
         {items.map((item, i) => (
           <div
             className="board-item"
