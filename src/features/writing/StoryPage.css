@@ -1,0 +1,10 @@
+.story-page {
+  height: calc(100vh - 56px);
+}
+
+.story-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}

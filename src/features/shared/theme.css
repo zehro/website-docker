@@ -1,0 +1,32 @@
+[data-theme="coding"] {
+  --font-display: "JetBrains Mono", ui-monospace, monospace;
+  --font-body: "JetBrains Mono", ui-monospace, monospace;
+  --accent: #6fa89e;
+  --bg: #16140f;
+  --surface: #1b1914;
+  --border: #2a2720;
+  --text-primary: #e8e3d6;
+  --text-secondary: #9a9484;
+}
+
+[data-theme="artistry"] {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: system-ui, sans-serif;
+  --accent: #a8763e;
+  --bg: #f7f4ec;
+  --surface: #ffffff;
+  --border: #dad4c4;
+  --text-primary: #211f1b;
+  --text-secondary: #6b6558;
+}
+
+[data-theme="writing"] {
+  --font-display: "Newsreader", Georgia, serif;
+  --font-body: "Newsreader", Georgia, serif;
+  --accent: #b3a587;
+  --bg: #efeae0;
+  --surface: #f7f4ec;
+  --border: #d8d0be;
+  --text-primary: #2a2620;
+  --text-secondary: #746c5c;
+}

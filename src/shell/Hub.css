@@ -1,0 +1,126 @@
+.hub {
+  min-height: 100vh;
+  background: #16140f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.hub-eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #8a8577;
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+.hub-doors {
+  display: flex;
+  gap: 1px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid #2a2720;
+}
+
+.hub-door {
+  flex: 1;
+  min-height: 320px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #1b1914;
+  text-decoration: none;
+  color: #e8e3d6;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.hub-door:not(:last-child) {
+  border-right: 1px solid #2a2720;
+}
+
+.hub-door:hover,
+.hub-door:focus-visible {
+  background: #211f19;
+}
+
+.hub-code {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #6f6a5c;
+}
+
+.hub-name {
+  margin-top: auto;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.15;
+  transition: color 0.3s ease;
+}
+
+.hub-door[data-theme="coding"] .hub-name {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+.hub-door[data-theme="artistry"] .hub-name {
+  font-family: "Fraunces", Georgia, serif;
+}
+.hub-door[data-theme="writing"] .hub-name {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+}
+
+.hub-door[data-theme="coding"]:hover .hub-name {
+  color: #6fa89e;
+}
+.hub-door[data-theme="artistry"]:hover .hub-name {
+  color: #c99a5f;
+}
+.hub-door[data-theme="writing"]:hover .hub-name {
+  color: #b3a587;
+}
+
+.hub-tagline {
+  font-size: 13px;
+  color: #9a9484;
+  line-height: 1.5;
+}
+
+.hub-enter {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: #6f6a5c;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hub-door:hover .hub-enter,
+.hub-door:focus-visible .hub-enter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hub-door:focus-visible {
+  outline: 2px solid #c99a5f;
+  outline-offset: -2px;
+}
+
+@media (max-width: 720px) {
+  .hub-doors {
+    flex-direction: column;
+  }
+  .hub-door:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #2a2720;
+  }
+  .hub-door {
+    min-height: 160px;
+  }
+}

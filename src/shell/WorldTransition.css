@@ -1,0 +1,24 @@
+.world-transition {
+  min-height: 100vh;
+}
+
+.world-veil {
+  position: fixed;
+  inset: 0;
+  background: #0b0a08;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  transition: opacity 0.28s ease;
+}
+
+.world-veil--active {
+  opacity: 1;
+  transition: opacity 0.16s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .world-veil {
+    display: none;
+  }
+}

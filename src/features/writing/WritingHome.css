@@ -1,0 +1,40 @@
+.writing-home {
+  min-height: calc(100vh - 56px);
+  background: var(--bg);
+  padding: 40px 24px;
+}
+
+.story-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 560px;
+}
+
+.story-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+}
+
+.story-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.story-note {
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.story-link:hover .story-title,
+.story-link:focus-visible .story-title {
+  color: var(--accent);
+}

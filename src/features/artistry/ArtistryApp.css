@@ -1,0 +1,21 @@
+.artistry-world {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+.artistry-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 56px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.artistry-header-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--text-secondary);
+}
